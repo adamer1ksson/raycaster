@@ -57,9 +57,9 @@ def main():
 
         for wall in walls:
             wall.draw()
-            handle = p.cast(wall)
-            if handle != False: 
-                pg.draw.circle(win,color="#ffffff", center=handle, radius=10)
+            handle = p.raycast(wall)
+            for coord in handle:
+                pg.draw.circle(win,color="#ffffff", center=coord, radius=10)
         
         p.draw()
         pg.display.update()
